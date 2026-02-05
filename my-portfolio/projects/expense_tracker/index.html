@@ -12,7 +12,7 @@
         <h1>Smart Expense Tracker</h1>
         <p class="subtitle">Track your spending simply</p>
       </header>
-       
+
       <!-- Filters -->
       <div class="filters">
         <button data-filter="all">All</button>
@@ -26,7 +26,7 @@
         <h2>Add Expense</h2>
         <form id="expense-form">
           <input type="text" id="name" placeholder="Expense name" />
-          <input type="number" id="amount" placeholder="Amount" step="0.01"/>
+          <input type="number" id="amount" placeholder="Amount" step="0.01" />
           <input type="date" id="date" />
           <select id="category">
             <option value="">Select category</option>
@@ -51,6 +51,19 @@
         <p>Total Spending</p>
         <h2 id="total">$0.00</h2>
       </section>
+
+      <footer class="footer">
+        <p>
+          &copy; <span id="year"></span> Jaisal Brar •
+          <a
+            href="https://github.com/brarjaisal/portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github
+          </a>
+        </p>
+      </footer>
     </main>
 
     <script src="script.js"></script>

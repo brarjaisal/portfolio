@@ -4,7 +4,7 @@ A clean and responsive expense tracker built with HTML, CSS, and JavaScript.
 Users can add expenses with a category and date, filter by time range, and keep data saved with localStorage.
 
 ## Live Demo
-https://brarjaisal-smartexpensetracker.netlify.app/
+https://simplysmartexpensetracker.netlify.app/
 
 ## Features
 - Add expenses with name, amount, category, and date

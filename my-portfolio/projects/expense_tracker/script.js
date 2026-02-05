@@ -36,7 +36,6 @@ function setDefaultDate() {
   dateInput.value = `${yyyy}-${mm}-${dd}`;
 }
 
-
 // Save and load expenses from localStorage
 function saveExpenses() {
   localStorage.setItem("expenses", JSON.stringify(expenses));
@@ -209,3 +208,9 @@ function init() {
 }
 
 init();
+
+// Set current year in footer
+const yearSpan = document.getElementById("year");
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
