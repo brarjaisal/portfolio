@@ -12,6 +12,8 @@ const filters = document.querySelector(".filters");
 // App State
 let expenses = [];
 let currentFilter = "all";
+let categoryChart = null;
+
 
 // Parse local date helper function
 function parseLocalDate(dateString) {
@@ -145,6 +147,71 @@ function updateTotal() {
   totalElement.textContent = `$${total.toFixed(2)}`;
 }
 
+// Update category chart function
+function updateCategoryChart() {
+  const filteredExpenses = filterExpenses();
+
+  const totalsByCategory = {};
+
+  filteredExpenses.forEach((expense) => {
+    totalsByCategory[expense.category] =
+      (totalsByCategory[expense.category] || 0) + expense.amount;
+  });
+
+  const labels = Object.keys(totalsByCategory);
+  const data = Object.values(totalsByCategory);
+
+  const chartCard = document.getElementById("chart-card");
+
+  // If no data, hide chart card
+  if (labels.length === 0) {
+    chartCard.style.display = "none";
+    if (categoryChart) {
+      categoryChart.destroy();
+      categoryChart = null;
+    }
+    return;
+  }
+
+  chartCard.style.display = "block";
+
+  const ctx = document.getElementById("categoryChart");
+
+  if (categoryChart) {
+    categoryChart.data.labels = labels;
+    categoryChart.data.datasets[0].data = data;
+    categoryChart.update();
+    return;
+  }
+
+  categoryChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Subtotal ($)",
+          data,
+          backgroundColor: "#c7dbeff2",
+          borderColor: "#8b9ec4",
+          borderWidth: 1,
+          borderRadius: 8,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+      },
+      scales: {
+        y: { beginAtZero: true },
+      },
+    },
+  });
+}
+
+
 // Form submit listener
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -171,6 +238,7 @@ form.addEventListener("submit", function (e) {
   saveExpenses();
   renderExpenses();
   updateTotal();
+  updateCategoryChart();
 
   form.reset();
   setDefaultDate();
@@ -186,6 +254,7 @@ if (filters) {
       applyActiveFilterUI();
       renderExpenses();
       updateTotal();
+      updateCategoryChart();
     }
   });
 }
@@ -198,6 +267,7 @@ expenseList.addEventListener("click", function (e) {
     saveExpenses();
     renderExpenses();
     updateTotal();
+    updateCategoryChart();
   }
 });
 
@@ -208,13 +278,8 @@ function init() {
   applyActiveFilterUI();
   renderExpenses();
   updateTotal();
+  updateCategoryChart();
   setDefaultDate();
 }
 
-init();
-
-// Set current year in footer
-const yearSpan = document.getElementById("year");
-if (yearSpan) {
-  yearSpan.textContent = new Date().getFullYear();
-}
+init(); 

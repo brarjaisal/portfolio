@@ -9,7 +9,7 @@
   <body>
     <main class="app">
       <header class="header">
-        <h1>Smart Expense Tracker</h1>
+        <h1>Where's My Dollar?</h1>
         <p class="subtitle">Track your spending simply</p>
       </header>
 
@@ -31,9 +31,11 @@
           <select id="category">
             <option value="">Select category</option>
             <option>Food</option>
-            <option>Transport</option>
+            <option>Transportation</option>
             <option>Bills</option>
-            <option>Other</option>
+            <option>Entertainment</option>
+            <option>Miscellaneous</option>
+            <option>Piggy Bank</option>
           </select>
           <button type="submit">Add Expense</button>
         </form>
@@ -46,6 +48,12 @@
         <p id="empty-state">No expenses yet. Add your first one.</p>
       </section>
 
+        <!-- Category Chart -->  
+      <section class="card" id="chart-card">
+        <h3>Spending by Category</h3>
+        <canvas id="categoryChart"></canvas>
+      </section>
+
       <!-- Total -->
       <section class="card total">
         <p>Total Spending</p>
@@ -54,7 +62,7 @@
 
       <footer class="footer">
         <p>
-          &copy; <span id="year"></span> Jaisal Brar •
+          Expense Tracker •
           <a
             href="https://github.com/brarjaisal/"
             target="_blank"
@@ -66,6 +74,7 @@
       </footer>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
