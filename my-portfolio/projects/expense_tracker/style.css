@@ -8,6 +8,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
   background: #c7dbef;
   color: #111827;
+  padding: 0.5rem;
 }
 
 h2 {
@@ -84,7 +85,7 @@ input, select {
   padding: 0.6rem;
   border-radius: 8px;
   border: 1px solid #E5E7EB;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 button {
@@ -173,4 +174,39 @@ button:hover {
 .total h2 {
   color: #8b9ec4;
   margin-top: 0.5rem;
+}
+
+
+@media (max-width: 480px) {
+  .app {
+    margin: 1rem auto;
+    padding: 0.75rem;
+  }
+
+  .card {
+    padding: 0.85rem;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .filters button {
+    font-size: 0.72rem;
+    padding: 0.28rem 0.6rem;
+  }
+
+  input, select, button {
+    font-size: 1rem;
+  }
 }

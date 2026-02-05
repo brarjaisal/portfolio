@@ -26,6 +26,17 @@ function formatDate(dateString) {
   return date.toLocaleDateString(undefined, options);
 }
 
+// Default date helper function
+function setDefaultDate() {
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, "0");
+  const dd = String(today.getDate()).padStart(2, "0");
+
+  dateInput.value = `${yyyy}-${mm}-${dd}`;
+}
+
+
 // Save and load expenses from localStorage
 function saveExpenses() {
   localStorage.setItem("expenses", JSON.stringify(expenses));
@@ -159,6 +170,8 @@ form.addEventListener("submit", function (e) {
   updateTotal();
 
   form.reset();
+  setDefaultDate();
+  nameInput.focus();
 });
 
 // Filter buttons listener
@@ -192,6 +205,7 @@ function init() {
   applyActiveFilterUI();
   renderExpenses();
   updateTotal();
+  setDefaultDate();
 }
 
 init();
