@@ -62,11 +62,11 @@ function loadFilter() {
   }
 }
 
-// Filter expenses based on current filter
+// Filter expenses based on current filter 
 function filterExpenses() {
   const today = new Date();
 
-  return expenses.filter((expense) => {
+  const filtered = expenses.filter((expense) => {
     const expenseDate = parseLocalDate(expense.date);
 
     if (currentFilter === "day") {
@@ -87,6 +87,10 @@ function filterExpenses() {
 
     return true; // all
   });
+
+  filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  return filtered;
 }
 
 // Update active filter button UI

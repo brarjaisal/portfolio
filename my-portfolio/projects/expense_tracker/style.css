@@ -12,7 +12,7 @@ body {
 }
 
 h2 {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .app {
@@ -23,11 +23,11 @@ h2 {
 
 .header {
   margin-bottom: 1.5rem;
-    text-align: center; 
+  text-align: center;
 }
 
 .subtitle {
-  color: #6B7280;
+  color: #6b7280;
   font-size: 0.9rem;
   margin-top: 0.25rem;
 }
@@ -42,7 +42,7 @@ h2 {
 
 .filters button {
   background: #c7dbef;
-  border: 1px solid #E5E7EB;
+  border: 1px solid #e5e7eb;
   color: #374151;
   border-radius: 999px;
   padding: 0.3rem 0.7rem;
@@ -60,19 +60,18 @@ h2 {
   border-color: #8b9ec4;
 }
 
-
 .card {
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 12px;
   padding: 1rem;
-  border: 1px solid #E5E7EB;
+  border: 1px solid #e5e7eb;
   margin-bottom: 1rem;
 }
 
 .date {
   display: block;
   font-size: 0.7rem;
-  color: #6B7280;
+  color: #6b7280;
 }
 
 form {
@@ -81,10 +80,11 @@ form {
   gap: 1rem;
 }
 
-input, select {
+input,
+select {
   padding: 0.6rem;
   border-radius: 8px;
-  border: 1px solid #E5E7EB;
+  border: 1px solid #e5e7eb;
   font-size: 1rem;
 }
 
@@ -108,7 +108,7 @@ button:hover {
 }
 
 #empty-state {
-  color: #6B7280;
+  color: #6b7280;
   font-size: 0.85rem;
   margin-top: 0.5rem;
 }
@@ -119,7 +119,7 @@ button:hover {
   align-items: flex-start;
   gap: 1rem;
   padding: 0.75rem 0;
-  border-bottom: 1px solid #E5E7EB;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .expense-item:last-child {
@@ -144,11 +144,6 @@ button:hover {
   align-items: center;
 }
 
-.date {
-  font-size: 0.75rem;
-  color: #6B7280;
-}
-
 .expense-right {
   display: flex;
   align-items: center;
@@ -162,7 +157,7 @@ button:hover {
 .delete-btn {
   background: none;
   border: none;
-  color: #EF4444;
+  color: #ef4444;
   font-size: 1rem;
   cursor: pointer;
 }
@@ -179,7 +174,7 @@ button:hover {
 .footer {
   text-align: center;
   font-size: 0.75rem;
-  color: #6B7280;
+  color: #6b7280;
   margin-top: 2rem;
 }
 
@@ -192,7 +187,6 @@ button:hover {
   color: #111827;
 }
 
-
 @media (max-width: 480px) {
   .app {
     margin: 1rem auto;
@@ -202,10 +196,6 @@ button:hover {
   .card {
     padding: 0.85rem;
     border-radius: 10px;
-  }
-
-  h1 {
-    font-size: 1.5rem;
   }
 
   .subtitle {
@@ -222,7 +212,17 @@ button:hover {
     padding: 0.28rem 0.6rem;
   }
 
-  input, select, button {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  input,
+  select,
+  button {
     font-size: 1rem;
   }
 }
